@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title Document
+       
+
+    body
+        div
+            div(style="display:flex; justify-content:space-between;padding: 30px") 
+                p UserID
+                p FirstName
+                p Email
+                p Age
+                p update
+                p delete
+
+        each user in users
+            div(style="display:flex; justify-content:space-between;padding: 30px") 
+                p=user.id
+                p=user.firstName
+                p=user.email
+                p=user.age
+                a(href="/user/update/"+user.id) update
+                a(href="/user/delete/"+user.id) delete
+
+        a(href="/user/create" style="margin-right: 20px") Add Another
+        a(href="/" style="margin-right: 20px") Home
+
+
