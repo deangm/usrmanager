@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const passport = require('passport');
+
 const path = require('path')
 const router = express.Router()
 const app = express();
@@ -24,7 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 router.get(/.*/, (req, res, next) => {
-    console.log("NEW PAGE")
+   
     if (userList.length < 1) {
         try {
             userList = JSON.parse(fs.readFileSync('./users.json'));
